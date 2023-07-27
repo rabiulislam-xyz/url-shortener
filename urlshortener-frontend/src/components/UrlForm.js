@@ -12,7 +12,7 @@ const UrlForm = ({ addShortenedUrl }) => {
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL; // Access the API URL from environment variables
-      const response = await axios.post(`${apiUrl}/short-urls/`, { target_url: longUrl });
+      const response = await axios.post(`${apiUrl}/api/shorturls/`, { target_url: longUrl });
       const shortcode = response.data.shortcode;
       addShortenedUrl({ longUrl, shortcode });
       setLongUrl('');

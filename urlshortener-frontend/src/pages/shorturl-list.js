@@ -17,7 +17,7 @@ const ShortcodeList = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const fetchShortcodes = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/short-urls/?page=${currentPage}`);
+      const response = await axios.get(`${apiUrl}/api/shorturls/?page=${currentPage}`);
       setShortcodes(response.data.results);
       setHasnext(response.data.next != null)
     } catch (error) {
