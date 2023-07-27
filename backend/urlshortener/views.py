@@ -25,4 +25,4 @@ class ShortURLRedirectView(APIView):
             pass
 
         # redirect to home page instead of raising 404
-        return HttpResponseRedirect(env.get("FRONTEND_URL", default='http://localhost:3000'))
+        return HttpResponseRedirect(env.str("FRONTEND_URL", default='http://localhost:3000'))
